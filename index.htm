@@ -3,33 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Website</title>
+    <title>Currency Conversion</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
-    <!-- Replace 'YOUR_PAYPAL_CLIENT_ID' with your actual PayPal Client ID -->
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-    <div id="paypal-button-container"></div>
 
-    <script>
-        // Render the PayPal button
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '10.00' // Set your desired payment amount
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                // Capture the transaction when the user approves the payment
-                return actions.order.capture().then(function(details) {
-                    // Handle successful payment (e.g., show a thank you message)
-                    console.log('Payment completed:', details);
-                });
-            }
-        }).render('#paypal-button-container');
-    </script>
+    <h1>Wise Currency Converter</h1>
+
+    <nav>
+
+        <a href="#about">About</a>
+        <a href="#mission">Mission</a>
+        <a href="#tarrifs">Tarriffs</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+<section id="about">
+    <h2>About Us</h2>
+
+    <p>Wise Currency Conversion is a platform that allows you to convert your money into <span>Kenyan Shillings</span>. We convert 
+        your money on your behalf and charge you a percentage of the total value 
+        to be converted and later withdraw  and give you in cash or transfer it to your bank account
+        quickly and easily.</p>
+    
+
+</section>
+
+<section id="mission">
+    <h2>Our Mission</h2>
+
+    <P>Our mission is to help those who have money in foreign currencies and fear that they might be traced or get followed
+        for in regards to their source of wealth or money. 
+    </P>
+
+
+
+</section>
+
+<section id="tarriffs">
+    <h3>Tarriffs</h3>
+
+        <div class="container">
+            <table>
+    
+                <thead>
+                 <tr>
+                    <th colspan="2"><h1>Currency Conversion Charges</h1></th>
+                 </tr>
+                 <tr>
+                    <th><h2>Amount<i>(in dollars)</i></h2></th>
+                    <th><h2>Charges</h2></th>
+                 </tr>
+    
+                </thead>
+        <tbody>
+                <tr>
+                    <td class="left">Less $500</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td class="left"> $501 - $1000</td>
+                    <td>25%</td>
+                </tr>
+                <tr>
+                    <td class="left">$1001 - $2000</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td class="left"> $ 2001 - $3000</td>
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <td class="left"> $ 3001 - $4000</td>
+                    <td>40%</td>
+                </tr>
+                <tr>
+                    <td class="left">$4001 - $5000</td>
+                    <td>45%</td>
+                </tr>
+                <tr>
+                    <td class="left">Over 50000</td>
+                    <td>50%</td>
+                </tr>
+            
+        </tbody>
+
+    </table>
+
+
+</section>
+
+<section id="contact">
+
+    <h3>Contact Us</h3>
+
+    <p>The money can be transfered via pay <span>Paypal Account below</span></p>
+
+     <!-- Replace 'YOUR_PAYPAL_CLIENT_ID' with your actual PayPal Client ID -->
+     <script src="https://www.paypal.com/sdk/js?client-id=georgepwino744@gmail.com"></script>
+     <div id="paypal-button-container"></div>
+ 
+     <script>
+         // Render the PayPal button
+         paypal.Buttons({
+             createOrder: function(data, actions) {
+                 return actions.order.create({
+                     purchase_units: [{
+                         amount: {
+                             value: '10.00' // Set your desired payment amount
+                         }
+                     }]
+                 });
+             },
+             onApprove: function(data, actions) {
+                 // Capture the transaction when the user approves the payment
+                 return actions.order.capture().then(function(details) {
+                     // Handle successful payment (e.g., show a thank you message)
+                     console.log('Payment completed:', details);
+                 });
+             }
+         }).render('#paypal-button-container');
+     </script>
+
+    
+
+</section>
+
 </body>
 </html>
